@@ -44,10 +44,21 @@ printGrid(grid);
     {
       if (e.code == "ArrowRight") 
       {
-        grid = grid.reverse();
-        console.log(grid)
-        var newgrid = finalArray(grid);
-        printGrid(newgrid);
+        const right = [];
+        var revArray = [];
+      for (i=0; i<grid.length; i++)
+      {
+        revArray = grid[i].reverse();
+        right.push(revArray);
+      }
+      var newgrid = finalArray(right);
+
+      for (i=0; i<newgrid.length; i++)
+      {
+        grid[i] = newgrid[i].reverse();
+        console.log(grid[i]);
+      }
+         printGrid(grid);
       }
 
 
@@ -100,7 +111,7 @@ printGrid(grid);
   }
 
 
-  // Create fucntion to shift numbers to the left in 1D
+  // Create function to shift numbers to the left in 1D
 
   function newArray(grid2)
   {
@@ -124,7 +135,7 @@ printGrid(grid);
   }
 
 
- //Fucntion to call the final array
+ //Function to call the final array
  function finalArray (grid1)
  {
    const ret = [];
@@ -137,3 +148,6 @@ printGrid(grid);
 
    return ret;
   }
+
+
+
